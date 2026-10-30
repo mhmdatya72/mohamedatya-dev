@@ -80,13 +80,13 @@ const Hero = () => {
 
         <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.15 }} className="hero-visual">
           <div className="portrait-ring" aria-hidden="true" />
-          <div className="portrait"><img src="/mohamed-atya-workspace.png" alt="Mohamed Atya Hawash at his desk" /></div>
+          <div className="portrait"><img src="/mohamed-atya-workspace.webp" alt="Mohamed Atya Hawash, Laravel and Vue.js developer, working at his desk" width="900" height="1125" fetchPriority="high" decoding="async" /></div>
           <div className="float float-stat">
             <div><b>−30%</b><small>faster API responses</small></div>
           </div>
           <div className="float float-browser" aria-hidden="true">
             <div className="bar"><i /><i /><i /><span>cordiana-sys.com</span></div>
-            <img src="/project-cordiana.jpg" alt="" />
+            <img src="/project-cordiana.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" />
           </div>
           <div className="float float-live"><i className="pulse" /> 7 platforms live in production</div>
         </motion.div>

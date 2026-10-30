@@ -1,5 +1,9 @@
 import { safeStorage } from '../utils/storage'
 
+export const SITE_URL = 'https://mohamedatya-dev.vercel.app'
+export const SITE_NAME = 'Mohamed Atya Hawash'
+export const OG_IMAGE = `${SITE_URL}/og-image.png`
+
 export const PERSON = {
   name: 'Mohamed Atya Hawash',
   email: 'mohamedatya563@gmail.com',

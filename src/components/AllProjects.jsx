@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { FaLaravel, FaVuejs, FaDatabase, FaUsers, FaGlobe, FaArrowLeft, FaArrowUp, FaCheckCircle, FaArrowRight } from 'react-icons/fa'
@@ -6,6 +6,8 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import BackToTop from './BackToTop'
 import { goToSection } from '../data/site'
+import Seo from './Seo'
+import { projectsJsonLd } from '../data/seo'
 
 const AllProjects = ({ darkMode, toggleDarkMode }) => {
   useEffect(() => {
@@ -16,7 +18,7 @@ const AllProjects = ({ darkMode, toggleDarkMode }) => {
     {
       title: 'Eleman EG — Al Eman Contracting',
       description: 'Arabic-first company website for Al Eman, presenting its general contracting, construction, and surveying services across Egypt.',
-      image: '/project-eleman-eg.png',
+      image: '/project-eleman-eg.webp',
       technologies: ['Arabic RTL', 'English', 'SEO'],
       features: [
         'Showcases general contracting and surveying services',
@@ -122,7 +124,7 @@ const AllProjects = ({ darkMode, toggleDarkMode }) => {
     {
       title: 'Al-Nasser Group Portal',
       description: 'Enterprise Retail Operations & Delivery Dashboard. An enterprise internal portal for Al-Nasser (leading Kuwaiti retail brand) to manage logistics, delivery operations, and multi-store workflows.',
-      image: '/alnasser-brand.jpg',
+      image: '/alnasser-brand.webp',
       technologies: ['Laravel', 'MySQL', 'Vue.js', 'Bootstrap'],
       features: [
         'Enterprise portal for logistics and delivery operations',
@@ -460,6 +462,8 @@ const AllProjects = ({ darkMode, toggleDarkMode }) => {
     }
   ]
 
+  const jsonLd = useMemo(() => projectsJsonLd([...projects, ...additionalProjects, ...clientProjects]), []) // eslint-disable-line react-hooks/exhaustive-deps
+
   const ProjectCard = ({ project, index }) => (
     <motion.article
       initial={{ opacity: 0, y: 24 }}
@@ -503,6 +507,7 @@ const AllProjects = ({ darkMode, toggleDarkMode }) => {
 
   return (
     <div className="relative">
+      <Seo title="All Projects | Mohamed Atya Hawash — Laravel & Vue.js Developer" description="Browse every live project by Mohamed Atya Hawash: ERP systems, SaaS platforms, B2B marketplaces, e-commerce stores and SEO-ready company websites." path="/projects" jsonLd={jsonLd} />
       <div className="backdrop" aria-hidden="true"><div className="backdrop-grid" /></div>
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 

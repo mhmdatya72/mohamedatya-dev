@@ -20,6 +20,8 @@ import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
 import ScrollProgress from './components/ScrollProgress'
 import AllProjects from './components/AllProjects'
+import Seo from './components/Seo'
+import { homeJsonLd } from './data/seo'
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => safeStorage.getItem('portfolio-theme-v3') !== 'light')
@@ -88,6 +90,7 @@ function App() {
           <Route path="/" element={
             <>
               <div className="backdrop" aria-hidden="true"><div className="backdrop-grid" /></div>
+              <Seo title="Mohamed Atya Hawash | Laravel & Vue.js Developer for ERP, SaaS & SEO" description="Laravel, Vue.js, React & Next.js engineer and team lead building ERP systems, SaaS platforms, WordPress and SEO-ready websites. See 7 live projects and start yours." path="/" jsonLd={homeJsonLd} />
               <ScrollProgress />
               <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
               <main>
