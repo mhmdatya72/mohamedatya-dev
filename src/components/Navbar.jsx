@@ -61,12 +61,10 @@ const Navbar = () => {
     <motion.nav initial={{ y: -80, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }} className={`nav${scrolled || isOpen ? ' scrolled' : ''}`}>
       <div className="nav-bar">
         <button type="button" onClick={() => go('home')} className="brand" aria-label={t.common.homeAria}>
-          <span className="brand-mark brand-photo" aria-hidden="true">
-            <img src="/avatar.webp" alt="" width="40" height="40" />
-          </span>
-          <span className="brand-copy">
-            <span className="brand-name">{t.nav.brandName}</span>
-            <span className="brand-role">{t.nav.brandRole}</span>
+          <span className="brand-logo">
+            <span className="brand-first">{t.nav.brandName.split(' ')[0]}</span>
+            <span className="brand-last grad-text">{t.nav.brandName.split(' ').slice(1).join(' ')}</span>
+            <span className="brand-dot" aria-hidden="true" />
           </span>
         </button>
 
