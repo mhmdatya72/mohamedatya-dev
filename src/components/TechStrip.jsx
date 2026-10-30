@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaPhp, FaLaravel, FaVuejs, FaDatabase, FaCode, FaSearch, FaGitAlt, FaServer } from 'react-icons/fa'
+import { FaPhp, FaLaravel, FaVuejs, FaDatabase, FaCode, FaSearch, FaGitAlt, FaServer, FaWordpress } from 'react-icons/fa'
 import { SiReact, SiNextdotjs } from 'react-icons/si'
 
 const stack = [
@@ -8,6 +8,7 @@ const stack = [
   { name: 'Vue.js', icon: FaVuejs },
   { name: 'React', icon: SiReact },
   { name: 'Next.js', icon: SiNextdotjs },
+  { name: 'WordPress', icon: FaWordpress },
   { name: 'MySQL', icon: FaDatabase },
   { name: 'REST APIs', icon: FaCode },
   { name: 'Technical SEO', icon: FaSearch },

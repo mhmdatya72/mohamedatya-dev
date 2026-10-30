@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaArrowRight, FaDownload, FaGithub, FaLinkedin, FaFacebook, FaWhatsapp } from 'react-icons/fa'
+import { FaArrowRight, FaDownload, FaGithub, FaLinkedin, FaFacebook, FaWhatsapp, FaLaravel, FaVuejs, FaWordpress } from 'react-icons/fa'
+import { SiReact, SiNextdotjs } from 'react-icons/si'
 import { SOCIAL_URLS, whatsappLink } from '../data/site'
 
 const roles = ['Full Stack Developer', 'Laravel & Vue.js Architect', 'SEO-Friendly Web Builds', 'Software Engineering Team Lead']
+
+const stack = [
+  { name: 'Laravel', icon: FaLaravel },
+  { name: 'Vue.js', icon: FaVuejs },
+  { name: 'React', icon: SiReact },
+  { name: 'Next.js', icon: SiNextdotjs },
+  { name: 'WordPress', icon: FaWordpress },
+]
 
 const proof = [
   { value: '5+', label: 'Years building' },
@@ -45,8 +54,11 @@ const Hero = () => {
             </AnimatePresence>
           </motion.div>
           <motion.p {...fade(0.2)} className="hero-sub">
-            Senior Laravel &amp; Vue.js engineer and team lead. I design and ship ERP systems, SaaS platforms and SEO-ready websites — from first architecture sketch to a stable, secure launch.
+            Senior Laravel, Vue.js, React &amp; Next.js engineer and team lead. I design and ship ERP systems, SaaS platforms, WordPress sites and SEO-ready websites — from first architecture sketch to a stable, secure launch.
           </motion.p>
+          <motion.div {...fade(0.22)} className="hero-stack" aria-label="Core technologies">
+            {stack.map(({ name, icon: Icon }) => <span key={name} className="hero-tech"><Icon size={15} />{name}</span>)}
+          </motion.div>
           <motion.div {...fade(0.26)} className="hero-actions">
             <a href="#contact" className="btn btn-primary">Start a project <FaArrowRight size={13} /></a>
             <a href="#work" className="btn">See live work</a>

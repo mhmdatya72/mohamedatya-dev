@@ -5,7 +5,7 @@ import SectionHead from './SectionHead'
 
 const skillGroups = [
   { title: 'Backend', icon: <FaServer />, skills: ['Laravel', 'PHP 8+', 'MySQL', 'MongoDB', 'RESTful APIs', 'Composer'], core: ['Laravel', 'PHP 8+', 'MySQL', 'RESTful APIs'] },
-  { title: 'Frontend', icon: <FaCode />, skills: ['Vue.js', 'React', 'Next.js', 'JavaScript ES6+', 'HTML5 / CSS3', 'Sass', 'Bootstrap', 'Blade'], core: ['Vue.js', 'React', 'Next.js'] },
+  { title: 'Frontend', icon: <FaCode />, skills: ['Vue.js', 'React', 'Next.js', 'WordPress', 'JavaScript ES6+', 'HTML5 / CSS3', 'Sass', 'Bootstrap', 'Blade'], core: ['Vue.js', 'React', 'Next.js', 'WordPress'] },
   { title: 'APIs & Testing', icon: <FaShieldAlt />, skills: ['Postman', 'JSON / XML', 'API Resources', 'JWT / Sanctum', 'PHPUnit', 'Laravel Dusk'], core: [] },
   { title: 'Deployment & Tools', icon: <FaGitAlt />, skills: ['Git / GitHub / GitLab', 'cPanel / WHM', 'AWS / VPS', 'SSL & domains', 'AWS S3 / Backblaze B2'], core: [] },
   { title: 'Search Engine Optimization', icon: <FaSearch />, skills: ['Technical SEO', 'On-page optimization', 'SEO-friendly development'], core: ['Technical SEO'] },
