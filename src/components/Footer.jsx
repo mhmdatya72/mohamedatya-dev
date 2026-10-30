@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { FaLinkedin, FaGithub, FaFacebook, FaWhatsapp, FaArrowUp } from 'react-icons/fa'
 import { NAV_ITEMS, PERSON, SOCIAL_URLS, goToSection, whatsappLink } from '../data/site'

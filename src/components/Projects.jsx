@@ -1,6 +1,8 @@
+'use client'
+
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { FaArrowRight, FaArrowUp, FaCheckCircle } from 'react-icons/fa'
 import SectionHead from './SectionHead'
 
@@ -117,7 +119,7 @@ const Projects = () => (
 
       <div className="work-cta">
         <p>25+ projects delivered — enterprise systems, e-commerce, client websites and more.</p>
-        <Link to="/projects" className="btn btn-primary">Browse all projects <FaArrowRight size={13} /></Link>
+        <Link href="/projects" className="btn btn-primary">Browse all projects <FaArrowRight size={13} /></Link>
       </div>
     </div>
   </section>

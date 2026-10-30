@@ -17,7 +17,7 @@
   --grad: linear-gradient(135deg, #6f4cff 0%, #4f7bff 100%);
   --shadow: 0 24px 60px -28px rgba(40, 30, 110, .35);
   --radius: 18px;
-  --font: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font: var(--font-jakarta), "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 html.dark {

@@ -1,9 +1,13 @@
+'use client'
+
 import React, { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { FaSun, FaMoon, FaBars, FaTimes, FaWhatsapp } from 'react-icons/fa'
+import { useTheme } from './ThemeProvider'
 import { NAV_ITEMS, NAV_PARENT, SECTION_IDS, goToSection, whatsappLink } from '../data/site'
 
-const Navbar = ({ darkMode, toggleDarkMode }) => {
+const Navbar = () => {
+  const { darkMode, toggleDarkMode } = useTheme()
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('home')

@@ -14,11 +14,11 @@ A modern, responsive portfolio website built with React, Tailwind CSS, and Frame
 
 ## 🛠️ Tech Stack
 
-- **React 18** - Frontend framework
+- **React 19** - Frontend framework
 - **Tailwind CSS** - Utility-first CSS framework
 - **Framer Motion** - Animation library
 - **React Icons** - Icon library
-- **Vite** - Build tool and development server
+- **Next.js** - React framework (App Router, static prerendering for SEO)
 
 ## 📦 Installation
 
@@ -37,9 +37,9 @@ A modern, responsive portfolio website built with React, Tailwind CSS, and Frame
    npm run build
    ```
 
-4. **Preview production build:**
+4. **Serve the production build:**
    ```bash
-   npm run preview
+   npm run start
    ```
 
 ## 🎨 Customization
@@ -73,7 +73,7 @@ Replace `public/Mohamed_Atya_Hawash_CV.pdf` with your actual CV file.
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
-- `npm run preview` - Preview production build
+- `npm run start` - Serve the production build
 - `npm run lint` - Run ESLint
 
 ## 📄 License

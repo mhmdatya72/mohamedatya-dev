@@ -30,3 +30,5 @@ lint.txt
 cv/
 vite-dev.log
 vite-preview.log
+.next/
+next-env.d.ts

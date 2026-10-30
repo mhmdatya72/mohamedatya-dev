@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaArrowRight, FaDownload, FaGithub, FaLinkedin, FaFacebook, FaWhatsapp, FaLaravel, FaVuejs, FaWordpress } from 'react-icons/fa'
@@ -86,7 +88,7 @@ const Hero = () => {
           </div>
           <div className="float float-browser" aria-hidden="true">
             <div className="bar"><i /><i /><i /><span>cordiana-sys.com</span></div>
-            <img src="/project-cordiana.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" />
+            <img src="/project-cordiana.webp" alt="" width="1200" height="750" decoding="async" />
           </div>
           <div className="float float-live"><i className="pulse" /> 7 platforms live in production</div>
         </motion.div>

@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { motion } from 'framer-motion'
 import { FaRocket, FaShieldAlt, FaCode, FaUsers, FaGraduationCap } from 'react-icons/fa'

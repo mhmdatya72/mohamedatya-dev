@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { motion } from 'framer-motion'
 import { FaCogs, FaLayerGroup, FaCode, FaRocket, FaArrowRight, FaSearch, FaCheck } from 'react-icons/fa'
