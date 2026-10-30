@@ -1,83 +1,51 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaCode, FaRocket, FaShieldAlt, FaUsers } from 'react-icons/fa'
+import { FaRocket, FaShieldAlt, FaCode, FaUsers, FaGraduationCap } from 'react-icons/fa'
+import SectionHead from './SectionHead'
 
-const achievements = [
-  { icon: <FaRocket />, title: 'Performance Optimization', description: 'Reduced API response times by 30% while serving 1,000+ concurrent users', tag: 'perf' },
-  { icon: <FaUsers />, title: 'Scalable Solutions', description: 'Built systems serving 1,000+ concurrent users', tag: 'scale' },
-  { icon: <FaShieldAlt />, title: 'Security Focus', description: 'Implemented robust security measures in all projects', tag: 'secure' },
-  { icon: <FaCode />, title: 'Clean Code', description: 'Maintainable and well-documented codebase', tag: 'quality' },
+const reasons = [
+  { icon: <FaRocket />, title: 'Performance you can measure', description: 'Reduced API response times by 30% while serving 1,000+ concurrent users.' },
+  { icon: <FaUsers />, title: 'Built to scale', description: 'Architecture and database design that keep working as your users and data grow.' },
+  { icon: <FaShieldAlt />, title: 'Security by default', description: 'Role-based access, secure APIs and safe deployments in every project.' },
+  { icon: <FaCode />, title: 'Clean, maintainable code', description: 'Documented, tested code your team can keep extending long after launch.' },
 ]
 
-const metrics = [
-  { value: '05+', label: 'YEARS BUILDING' },
-  { value: '21+', label: 'WEB APPLICATIONS' },
-  { value: '1K+', label: 'USERS SUPPORTED' },
-  { value: '30%', label: 'FASTER API' },
-]
-
-const rise = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
-}
+const focus = ['Architecture', 'Backend', 'SEO', 'Team leadership', 'SaaS']
 
 const About = () => (
-  <section id="about" className="about-lab py-24 px-4">
-    <div className="container-custom about-shell">
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.12 }}
-        className="about-content"
-      >
-        <motion.div variants={rise} className="about-heading">
-          <span className="about-kicker"><i /> PROFILE / 01</span>
-          <h2>About <span>Me</span><sup>01</sup></h2>
-          <p>A little context behind the code.</p>
-        </motion.div>
+  <section id="about" className="section">
+    <div className="wrap">
+      <SectionHead eyebrow="Why work with me">
+        An engineer who thinks like <span className="grad-text">a business partner</span>
+      </SectionHead>
 
-        <div className="about-main-grid">
-          <motion.article variants={rise} className="about-story">
-            <div className="about-story-top"><span>01 — THE ENGINEER</span><span className="about-live"><i /> AVAILABLE FOR IMPACT</span></div>
-            <div className="about-big-mark" aria-hidden="true">{`{ }`}</div>
-            <p className="about-lead">I turn complex business needs into <em>software that scales.</em></p>
-            <p className="about-copy">I'm a Software Engineering Team Lead &amp; Senior Full Stack Laravel Developer with over <b>5+ years</b> of experience architecting and scaling web applications, Cloud ERPs, and SaaS platforms using PHP 8+, Laravel, MySQL, Vue.js, and RESTful APIs. I also work on SEO to help websites improve their visibility in search.</p>
-            <p className="about-copy">I lead engineering teams and manage full software development lifecycles, with a proven track record optimizing backend performance — reducing API response times by 30% and supporting 1,000+ concurrent users. My expertise spans system security, database design, SEO-friendly web development, and delivering complex B2B/Enterprise solutions in Agile environments.</p>
-            <div className="about-focus"><span>FOCUS</span><b>Architecture</b><b>Backend</b><b>SEO</b><b>Team Leadership</b><b>SaaS</b></div>
-            <p className="about-footnote">Away from the keyboard, I explore new technologies, contribute to open source, and share what I learn with the developer community.</p>
-          </motion.article>
-
-          <motion.aside variants={rise} className="about-console">
-            <div className="about-console-head"><span><i /><i /><i /></span><b>impact.log</b><small>LIVE DATA</small></div>
-            <div className="about-metrics">
-              {metrics.map((metric, index) => (
-                <div className="about-metric" key={metric.label}>
-                  <span className="about-metric-index">0{index + 1}</span>
-                  <strong>{metric.value}</strong>
-                  <small>{metric.label}</small>
-                  <span className="about-metric-line" />
-                </div>
-              ))}
+      <div className="about-grid">
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.55 }}>
+          <p className="about-lead">I turn complex business needs into software that scales.</p>
+          <div className="about-copy">
+            <p>I'm a Software Engineering Team Lead and Senior Full Stack Laravel Developer with <b>5+ years</b> of experience architecting and scaling web applications, cloud ERPs and SaaS platforms using PHP 8+, Laravel, MySQL, Vue.js and RESTful APIs. I also handle SEO so your website is easy to find.</p>
+            <p>I lead engineering teams and manage the full software development lifecycle in Agile environments — with a proven record of optimizing backend performance and delivering complex B2B and enterprise solutions on time.</p>
+          </div>
+          <div className="focus-row">{focus.map((item) => <span key={item} className="chip">{item}</span>)}</div>
+          <div className="card edu">
+            <span><FaGraduationCap size={20} /></span>
+            <div>
+              <small>Education</small>
+              <b>B.Sc. Computers &amp; Information (Information Systems)</b>
+              <p>Damanhour University · Class of 2024</p>
             </div>
-            <div className="about-console-foot"><span>STATUS</span><b><i /> BUILDING WHAT'S NEXT</b></div>
-          </motion.aside>
-        </div>
-
-        <motion.div variants={rise} className="about-principles">
-          <div className="about-principles-title"><span>02 — HOW I BUILD</span><p>Principles in production</p></div>
-          <div className="about-principle-list">
-            {achievements.map((item, index) => (
-              <motion.article key={item.tag} whileHover={{ x: 5 }} className="about-principle">
-                <span className="about-principle-index">0{index + 1}</span>
-                <span className="about-principle-icon">{item.icon}</span>
-                <span className="about-principle-text"><b>{item.title}</b><small>{item.description}</small></span>
-                <code>{item.tag}</code>
-                <span className="about-principle-arrow">↗</span>
-              </motion.article>
-            ))}
           </div>
         </motion.div>
-      </motion.div>
+
+        <div className="why-grid">
+          {reasons.map((item, index) => (
+            <motion.article key={item.title} initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.5, delay: index * 0.08 }} className="card card-hover why">
+              <span className="why-icon">{item.icon}</span>
+              <div><h3>{item.title}</h3><p>{item.description}</p></div>
+            </motion.article>
+          ))}
+        </div>
+      </div>
     </div>
   </section>
 )

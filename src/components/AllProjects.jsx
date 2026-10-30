@@ -1,63 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { FaExternalLinkAlt, FaLaravel, FaVuejs, FaDatabase, FaUsers, FaGlobe, FaArrowLeft } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { FaLaravel, FaVuejs, FaDatabase, FaUsers, FaGlobe, FaArrowLeft, FaArrowUp, FaCheckCircle, FaArrowRight } from 'react-icons/fa'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import { safeStorage } from '../utils/storage'
+import BackToTop from './BackToTop'
+import { goToSection } from '../data/site'
 
-const AllProjects = () => {
-  const [darkMode, setDarkMode] = useState(false)
-
-  useEffect(() => {
-    // Check for saved theme preference or default to light mode
-    const savedTheme = safeStorage.getItem('theme')
-    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      setDarkMode(true)
-    }
-  }, [])
-
-  useEffect(() => {
-    // Apply theme to document
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-    safeStorage.setItem('theme', darkMode ? 'dark' : 'light')
-  }, [darkMode])
-
-  // Scroll to top when component mounts
+const AllProjects = ({ darkMode, toggleDarkMode }) => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-  }
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-      },
-    },
-  }
 
   const projects = [
     {
@@ -508,223 +461,77 @@ const AllProjects = () => {
   ]
 
   const ProjectCard = ({ project, index }) => (
-    <motion.div
-      key={index}
-      variants={itemVariants}
-      className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full"
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.5, delay: (index % 3) * 0.07 }}
+      className="card card-hover project"
     >
-      {/* Project Image */}
-      <div className="relative h-64 overflow-hidden">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-        <div className="absolute bottom-4 left-4">
-          <div className="flex items-center justify-center w-16 h-16 bg-white/90 dark:bg-gray-800/90 rounded-lg shadow-lg">
-            <div className="text-3xl text-primary">
-              {project.icon}
-            </div>
-          </div>
+      {project.demo !== '#' ? (
+        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-media" aria-label={`Open ${project.title}`}>
+          <img src={project.image} alt={`${project.title} website`} loading="lazy" />
+          <div className="project-tags"><span className="tag-live"><i className="pulse" /> {project.status}{project.country ? ` · ${project.country}` : ''}</span></div>
+        </a>
+      ) : (
+        <div className="project-media">
+          <img src={project.image} alt={`${project.title} website`} loading="lazy" />
+          <div className="project-tags"><span className="tag-live">{project.status}</span></div>
         </div>
-      </div>
-
-      {/* Project Content */}
-      <div className="p-6 flex flex-col flex-grow">
-        {/* Project Title */}
-        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-          {project.title}
-        </h3>
-
-        {/* Project Description */}
-        <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed flex-grow">
-          {project.description}
-        </p>
-
-        {/* Technologies */}
-        <div className="mb-6">
-          <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Technologies Used:</h4>
-          <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech, techIndex) => (
-              <span
-                key={techIndex}
-                className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full font-medium"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Key Features */}
-        <div className="mb-8">
-          <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Key Features:</h4>
-          <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
-            {project.features.map((feature, featureIndex) => (
-              <li key={featureIndex} className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Project Status */}
-        {project.status && (
-          <div className="mb-4">
-            <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full ${
-              project.status === 'Under Development' ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' :
-              project.status === 'Live' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' :
-              project.status === 'Completed' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' :
-              'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
-            }`}>
-              {project.status}
-            </span>
-          </div>
+      )}
+      <div className="project-body">
+        <h3>{project.title}</h3>
+        <p className="project-desc">{project.description}</p>
+        <ul className="project-features">
+          {project.features.slice(0, 3).map((feature) => <li key={feature}><FaCheckCircle size={12} /><span>{feature}</span></li>)}
+        </ul>
+        <div className="project-stack">{project.technologies.map((tech) => <span key={tech} className="chip">{tech}</span>)}</div>
+        {project.demo !== '#' ? (
+          <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link">Visit live site <FaArrowUp size={12} style={{ transform: 'rotate(45deg)' }} /></a>
+        ) : (
+          <span className="soon">Coming soon</span>
         )}
-
-        {/* Action Buttons - Fixed at bottom */}
-        <div className="flex gap-4 mt-auto">
-          {project.demo !== '#' ? (
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 bg-primary hover:bg-sky-600 text-white px-6 py-3 rounded-lg text-center font-medium transition-colors duration-300 flex items-center justify-center"
-            >
-              <FaExternalLinkAlt className="mr-2" size={16} />
-              Live Demo
-            </a>
-          ) : (
-            <div className="flex-1 bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 px-6 py-3 rounded-lg text-center font-medium flex items-center justify-center cursor-not-allowed">
-              <FaExternalLinkAlt className="mr-2" size={16} />
-              Coming Soon
-            </div>
-          )}
-        </div>
       </div>
-    </motion.div>
+    </motion.article>
   )
 
+  const groups = [
+    { title: 'Featured projects', note: 'Platforms and systems I architected and shipped.', items: projects },
+    { title: 'Additional projects', note: 'Earlier work and special builds.', items: additionalProjects },
+    { title: 'Client websites', note: 'Live websites and platforms built for clients.', items: clientProjects },
+  ]
+
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Navbar */}
+    <div className="relative">
+      <div className="backdrop" aria-hidden="true"><div className="backdrop-grid" /></div>
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      
-      {/* Header */}
-      <div className="bg-white dark:bg-gray-800 shadow-sm pt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Link
-                to="/"
-                className="flex items-center text-gray-600 dark:text-gray-400 hover:text-primary transition-colors duration-300"
-              >
-                <FaArrowLeft className="mr-2" size={16} />
-                Back to Portfolio
-              </Link>
-            </div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-              All Projects
-            </h1>
-            <div className="w-16"></div> {/* Spacer for centering */}
-          </div>
+
+      <header className="page-head">
+        <div className="wrap">
+          <Link to="/" className="back-link"><FaArrowLeft size={12} /> Back to portfolio</Link>
+          <h1>All <span className="grad-text">projects</span></h1>
+          <p>Every system, platform and website listed here is live. Open any of them to see the work in production.</p>
         </div>
-      </div>
+      </header>
 
-      {/* Projects Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-        >
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
-          ))}
-        </motion.div>
+      <main className="wrap" style={{ position: 'relative', zIndex: 1, paddingBottom: '5rem' }}>
+        {groups.map((group) => (
+          <section key={group.title}>
+            <div className="group-title"><h2>{group.title}</h2><p>{group.note}</p></div>
+            <div className="project-list">
+              {group.items.map((project, index) => <ProjectCard key={project.title} project={project} index={index} />)}
+            </div>
+          </section>
+        ))}
 
-        {/* Additional Projects */}
-        <motion.div
-          variants={itemVariants}
-          className="mt-16 mb-8"
-        >
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white text-center">
-            Additional Projects
-          </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-4 mb-6"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-400 text-center">
-            Earlier work and special builds
-          </p>
-        </motion.div>
+        <div className="work-cta" style={{ marginTop: '4rem' }}>
+          <p>Have something similar in mind?</p>
+          <button type="button" className="btn btn-primary" onClick={() => goToSection('contact')}>Start a project <FaArrowRight size={13} /></button>
+        </div>
+      </main>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-        >
-          {additionalProjects.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
-          ))}
-        </motion.div>
-
-        {/* Client Websites */}
-        <motion.div
-          variants={itemVariants}
-          className="mt-16 mb-8"
-        >
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white text-center">
-            Client Websites
-          </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-4 mb-6"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-400 text-center">
-            Live websites and platforms built for clients
-          </p>
-        </motion.div>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-        >
-          {clientProjects.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
-          ))}
-        </motion.div>
-
-        {/* Call to Action */}
-        <motion.div
-          variants={itemVariants}
-          className="mt-16 text-center"
-        >
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Interested in Working Together?
-            </h3>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
-              I'm always excited to take on new challenges and create amazing web applications.
-              Let's discuss your project!
-            </p>
-            <Link
-              to="/#contact"
-              className="bg-primary hover:bg-sky-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 inline-block"
-            >
-              Get In Touch
-            </Link>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Footer */}
       <Footer />
+      <BackToTop />
     </div>
   )
 }

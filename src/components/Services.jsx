@@ -1,81 +1,68 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaCogs, FaLayerGroup, FaCode, FaRocket, FaArrowRight, FaSearch } from 'react-icons/fa'
+import { FaCogs, FaLayerGroup, FaCode, FaRocket, FaArrowRight, FaSearch, FaCheck } from 'react-icons/fa'
+import SectionHead from './SectionHead'
 
 const services = [
   {
     title: 'Business Platforms & ERP',
-    description: 'Custom cloud business systems that connect operations, teams, and data in one dependable workspace.',
-    details: ['ERP workflows', 'CRM & POS', 'Inventory and finance'],
+    description: 'Custom cloud systems that connect operations, teams and data in one dependable workspace — so your staff stop juggling spreadsheets.',
+    details: ['ERP workflows, CRM & POS', 'Inventory, HR and finance', 'Role-based access & e-invoicing'],
     icon: <FaLayerGroup />,
-    code: 'platforms',
-  },
-  {
-    title: 'Backend Systems & APIs',
-    description: 'Secure Laravel backends and REST APIs built to support complex products and integrations.',
-    details: ['Laravel architecture', 'RESTful APIs', 'RBAC and integrations'],
-    icon: <FaCode />,
-    code: 'backend',
+    featured: true,
   },
   {
     title: 'SaaS & Full-Stack Products',
-    description: 'From product requirements to deployment, I build web applications that are ready to grow.',
-    details: ['SaaS applications', 'Vue.js interfaces', 'Dashboards'],
+    description: 'From product requirements to deployment, I build web applications that are ready to onboard users and grow with them.',
+    details: ['Multi-tenant SaaS applications', 'Vue.js / React interfaces', 'Dashboards & reporting'],
     icon: <FaCogs />,
-    code: 'products',
+    featured: true,
+  },
+  {
+    title: 'Backend Systems & APIs',
+    description: 'Secure Laravel backends and REST APIs designed to carry complex products, mobile apps and third-party integrations.',
+    details: ['Laravel architecture', 'RESTful APIs & integrations', 'Payments, auth & RBAC'],
+    icon: <FaCode />,
+  },
+  {
+    title: 'SEO-Ready Websites',
+    description: 'Fast, technically sound websites that are easier to discover on search engines and convert visitors into enquiries.',
+    details: ['Technical & on-page SEO', 'Core Web Vitals tuning', 'Arabic / English builds'],
+    icon: <FaSearch />,
   },
   {
     title: 'Performance & Team Leadership',
-    description: 'Improve existing systems and help engineering teams ship reliable, maintainable software.',
-    details: ['Query optimization', 'Code reviews', 'Team mentorship'],
+    description: 'Rescue slow or fragile systems, and help your engineering team ship reliable, maintainable software.',
+    details: ['Query & cache optimization', 'Code reviews & architecture', 'Team mentorship'],
     icon: <FaRocket />,
-    code: 'engineering',
-  },
-  {
-    title: 'Search Engine Optimization',
-    description: 'SEO improvements that make websites easier to discover, faster to use, and technically sound for search engines.',
-    details: ['Technical SEO', 'On-page optimization', 'Search-ready web builds'],
-    icon: <FaSearch />,
-    code: 'seo',
   },
 ]
 
 const Services = () => (
-  <section id="services" className="services-section px-4 py-24">
-    <div className="container-custom services-shell">
-      <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.12 }}>
-        <motion.header
-          initial={{ opacity: 0, y: 22 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.55 }}
-          className="services-heading"
-        >
-          <div><span className="services-kicker"><i /> WHAT I BUILD / 05</span><h2>Services<span>.</span></h2></div>
-          <p>From a technical challenge<br />to software built for real work.</p>
-        </motion.header>
+  <section id="services" className="section">
+    <div className="wrap">
+      <SectionHead eyebrow="What I do" lead="Five ways I help businesses turn a technical challenge into software that works every day.">
+        Services built around <span className="grad-text">your business goals</span>
+      </SectionHead>
 
-        <div className="services-grid">
-          {services.map((service, index) => (
-            <motion.article
-              key={service.code}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              whileHover={{ y: -5 }}
-              className="service-card"
-            >
-              <div className="service-card-top"><span>0{index + 1} / SERVICE</span><code>src/{service.code}</code></div>
-              <div className="service-icon">{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <div className="service-details">{service.details.map((detail) => <span key={detail}>{detail}</span>)}</div>
-              <a href="#contact" className="service-link">Discuss a project <FaArrowRight /></a>
-            </motion.article>
-          ))}
-        </div>
-      </motion.div>
+      <div className="services-grid">
+        {services.map((service, index) => (
+          <motion.article
+            key={service.title}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.5, delay: index * 0.07 }}
+            className={`card card-hover service${service.featured ? ' service-featured' : ''}`}
+          >
+            <div className="service-icon">{service.icon}</div>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+            <ul>{service.details.map((d) => <li key={d}><FaCheck size={11} />{d}</li>)}</ul>
+            <a href="#contact" className="service-link">Discuss this <FaArrowRight size={12} /></a>
+          </motion.article>
+        ))}
+      </div>
     </div>
   </section>
 )
