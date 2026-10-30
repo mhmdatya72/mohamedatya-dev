@@ -16,8 +16,9 @@ const stack = [
   { name: 'Git & CI/CD', icon: FaGitAlt },
 ]
 
-const TechStrip = () => (
-  <div className="marquee" aria-label="Core technologies">
+// Technology names stay in English in both languages; the strip is always laid out left-to-right.
+const TechStrip = ({ label }) => (
+  <div className="marquee" aria-label={label} dir="ltr">
     <div className="marquee-inner">
       {[...stack, ...stack].map(({ name, icon: Icon }, i) => (
         <span key={`${name}-${i}`} className="marquee-item" aria-hidden={i >= stack.length}><Icon size={18} />{name}</span>

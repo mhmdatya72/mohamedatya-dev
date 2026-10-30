@@ -32,8 +32,9 @@ const PageEffects = () => {
       for (const id of SECTION_IDS) {
         const element = document.getElementById(id)
         if (element && position >= element.offsetTop && position < element.offsetTop + element.offsetHeight) {
-          const hash = `#${id}`
-          if (window.location.hash !== hash) window.history.replaceState(null, '', hash)
+          // The top of the page keeps a clean URL (no #home) so it matches the canonical address.
+          const url = id === 'home' ? window.location.pathname : `#${id}`
+          if (id === 'home' ? window.location.hash !== '' : window.location.hash !== url) window.history.replaceState(null, '', url)
           break
         }
       }

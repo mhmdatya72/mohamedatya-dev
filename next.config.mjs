@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  experimental: { globalNotFound: true },
   async headers() {
     return [
       {
