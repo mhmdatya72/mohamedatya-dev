@@ -62,7 +62,7 @@ const Hero = () => {
             {stack.map(({ name, icon: Icon }) => <span key={name} className="hero-tech"><Icon size={15} />{name}</span>)}
           </motion.div>
           <motion.div {...fade(0.26)} className="hero-actions">
-            <a href="#contact" className="btn btn-primary">Start a project <FaArrowRight size={13} /></a>
+            <a href="#contact" className="btn btn-primary">Start your project <FaArrowRight size={13} /></a>
             <a href="#work" className="btn">See live work</a>
           </motion.div>
           <motion.div {...fade(0.32)} className="hero-links">
