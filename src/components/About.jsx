@@ -2,11 +2,11 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaRocket, FaShieldAlt, FaCode, FaUsers, FaGraduationCap } from 'react-icons/fa'
+import { FaRocket, FaShieldAlt, FaCode, FaComments, FaGraduationCap } from 'react-icons/fa'
 import SectionHead from './SectionHead'
 import { useT, Heading, renderBold } from '../i18n/LangProvider'
 
-const icons = [<FaRocket key="r" />, <FaUsers key="u" />, <FaShieldAlt key="s" />, <FaCode key="c" />]
+const icons = [<FaRocket key="r" />, <FaShieldAlt key="s" />, <FaComments key="m" />, <FaCode key="c" />]
 
 const About = () => {
   const { t } = useT()

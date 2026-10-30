@@ -11,7 +11,7 @@ const en = {
     keywords: ['Mohamed Atya Hawash', 'Laravel developer', 'Vue.js developer', 'React developer', 'Next.js developer', 'WordPress developer', 'PHP developer', 'ERP development', 'SaaS development', 'SEO-friendly websites', 'Egypt'],
     projectsTitle: 'All Projects | Mohamed Atya Hawash — Laravel & Vue.js Developer',
     projectsDescription: 'Browse every live project by Mohamed Atya Hawash: ERP systems, SaaS platforms, B2B marketplaces, e-commerce stores and SEO-ready company websites.',
-    ogAlt: 'Mohamed Atya Hawash — I build the software your business runs on',
+    ogAlt: 'Mohamed Atya Hawash — Software your business can rely on',
     notFoundTitle: 'Page not found | Mohamed Atya Hawash',
   },
 
@@ -40,10 +40,10 @@ const en = {
 
   hero: {
     badge: 'Available for new projects',
-    h1a: 'I build the software ',
-    h1b: 'your business runs on.',
-    roles: ['Full Stack Developer', 'Laravel & Vue.js Architect', 'SEO-Friendly Web Builds', 'Software Engineering Team Lead'],
-    sub: 'Senior Laravel, Vue.js, React & Next.js engineer and team lead. I design and ship ERP systems, SaaS platforms, WordPress sites and SEO-ready websites — from first architecture sketch to a stable, secure launch.',
+    h1a: "Software your ",
+    h1b: "business can rely on.",
+    roles: ['Full Stack Developer', 'Laravel & Vue.js Architect', 'SEO-Friendly Web Builds', 'Software Engineer'],
+    sub: "ERP systems, SaaS platforms and SEO-ready websites built with Laravel, Vue.js, React & Next.js — fast, secure and made to scale. 5+ years of experience, 25+ delivered projects and systems serving 1,000+ concurrent users.",
     primary: 'Start your project',
     secondary: 'See live work',
     cv: 'Download CV',
@@ -59,16 +59,16 @@ const en = {
   },
 
   services: {
-    eyebrow: 'What I do',
+    eyebrow: 'What you get',
     title: { pre: 'Services built around ', accent: 'your business goals', post: '' },
-    lead: 'Five ways I help businesses turn a technical challenge into software that works every day.',
+    lead: "Five ways to turn a technical challenge into software that works for your business every day.",
     link: 'Discuss this',
     items: [
-      { title: 'Business Platforms & ERP', description: 'Custom cloud systems that connect operations, teams and data in one dependable workspace — so your staff stop juggling spreadsheets.', details: ['ERP workflows, CRM & POS', 'Inventory, HR and finance', 'Role-based access & e-invoicing'] },
-      { title: 'SaaS & Full-Stack Products', description: 'From product requirements to deployment, I build web applications that are ready to onboard users and grow with them.', details: ['Multi-tenant SaaS applications', 'Vue.js / React interfaces', 'Dashboards & reporting'] },
-      { title: 'Backend Systems & APIs', description: 'Secure Laravel backends and REST APIs designed to carry complex products, mobile apps and third-party integrations.', details: ['Laravel architecture', 'RESTful APIs & integrations', 'Payments, auth & RBAC'] },
-      { title: 'SEO-Ready Websites', description: 'Fast, technically sound websites that are easier to discover on search engines and convert visitors into enquiries.', details: ['Technical & on-page SEO', 'Core Web Vitals tuning', 'Arabic / English builds'] },
-      { title: 'Performance & Team Leadership', description: 'Rescue slow or fragile systems, and help your engineering team ship reliable, maintainable software.', details: ['Query & cache optimization', 'Code reviews & architecture', 'Team mentorship'] },
+      { title: "Business Platforms & ERP", description: "One cloud system that connects sales, HR, inventory and finance — so your team stops juggling spreadsheets and disconnected tools.", details: ["ERP workflows, CRM & POS","Inventory, HR and finance","Role-based access & e-invoicing"] },
+      { title: "SaaS & Full-Stack Products", description: "From idea to launch: multi-tenant web applications with polished interfaces, ready to onboard users and grow with them.", details: ["Multi-tenant SaaS applications","Vue.js / React interfaces","Dashboards & reporting"] },
+      { title: "Backend Systems & APIs", description: "Secure, fast Laravel backends and REST APIs that power complex products, mobile apps and third-party integrations.", details: ["Laravel architecture","RESTful APIs & integrations","Payments, auth & RBAC"] },
+      { title: "SEO-Ready Websites", description: "Fast, technically sound websites built to rank on search engines and turn visitors into enquiries.", details: ["Technical & on-page SEO","Core Web Vitals tuning","Arabic / English builds"] },
+      { title: "Performance & System Rescue", description: "Slow or fragile system? Bottlenecks are found, fixed and documented, leaving software that stays fast and easy to maintain.", details: ["Query & cache optimization","Architecture & code audits","Fixing slow or fragile systems"] },
     ],
   },
 
@@ -95,8 +95,8 @@ const en = {
   results: {
     eyebrow: 'Track record',
     title: { pre: 'Delivery you can ', accent: 'count on', post: '' },
-    lead: "Measured outcomes from the systems and teams I've helped build.",
-    items: ['Years of professional experience', 'Projects delivered to clients', 'Happy clients and teams', 'Users served on the platforms I build'],
+    lead: 'Measured outcomes from systems built and delivered to real businesses.',
+    items: ['Years of professional experience', 'Projects delivered to clients', 'Happy clients', 'Users served across the delivered platforms'],
   },
 
   process: {
@@ -104,55 +104,55 @@ const en = {
     title: { pre: 'From idea to ', accent: 'production', post: ' in four steps' },
     lead: 'A simple, transparent workflow that keeps you informed from the first call to launch day.',
     steps: [
-      { title: 'Discover & scope', text: 'We talk through your goals, users and constraints. I turn them into a clear scope, priorities and a realistic plan.', out: 'Scope & plan' },
-      { title: 'Architect & design', text: 'I design the data model, API and system architecture so the product can scale and stay secure as it grows.', out: 'Architecture' },
+      { title: 'Discover & scope', text: "We talk through your goals, users and constraints, then turn them into a clear scope, priorities and a realistic plan.", out: 'Scope & plan' },
+      { title: 'Architect & design', text: "The data model, API and system architecture are designed so the product scales and stays secure as it grows.", out: 'Architecture' },
       { title: 'Build in iterations', text: 'Agile delivery with regular demos, code reviews and testing, so you see working software early and often.', out: 'Working releases' },
       { title: 'Launch & support', text: 'Deployment, SSL, performance tuning and hand-over — then ongoing support as your product evolves.', out: 'Stable launch' },
     ],
   },
 
   about: {
-    eyebrow: 'Why work with me',
+    eyebrow: "Why clients choose Mohamed",
     title: { pre: 'An engineer who thinks like ', accent: 'a business partner', post: '' },
-    lead: 'I turn complex business needs into software that scales.',
+    lead: "Complex business needs, turned into software that scales.",
     copy: [
-      "I'm a Software Engineering Team Lead and Senior Full Stack Laravel Developer with **5+ years** of experience architecting and scaling web applications, cloud ERPs and SaaS platforms using PHP 8+, Laravel, MySQL, Vue.js and RESTful APIs. I also handle SEO so your website is easy to find.",
-      'I lead engineering teams and manage the full software development lifecycle in Agile environments — with a proven record of optimizing backend performance and delivering complex B2B and enterprise solutions on time.',
+      "Mohamed Atya Hawash is a Senior Full Stack Laravel developer with **5+ years** of experience architecting and scaling web applications, cloud ERPs and SaaS platforms with PHP 8+, Laravel, MySQL, Vue.js and RESTful APIs — plus the SEO know-how to make them easy to find.",
+      "From requirements to deployment, every project follows a clear Agile process, backed by a proven record of faster backends and on-time delivery of complex B2B and enterprise solutions.",
     ],
-    focus: ['Architecture', 'Backend', 'SEO', 'Team leadership', 'SaaS'],
+    focus: ['Architecture', 'Backend', 'SEO', 'Delivery', 'SaaS'],
     edu: { label: 'Education', degree: 'B.Sc. Computers & Information (Information Systems)', school: 'Damanhour University · Class of 2024' },
     reasons: [
-      { title: 'Performance you can measure', description: 'Reduced API response times by 30% while serving 1,000+ concurrent users.' },
-      { title: 'Built to scale', description: 'Architecture and database design that keep working as your users and data grow.' },
-      { title: 'Security by default', description: 'Role-based access, secure APIs and safe deployments in every project.' },
-      { title: 'Clean, maintainable code', description: 'Documented, tested code your team can keep extending long after launch.' },
+      { title: "Measurable performance", description: "API response times cut by 30% on a platform serving 1,000+ concurrent users." },
+      { title: "Scalable and secure", description: "Architecture, database design and role-based access that keep working safely as users and data grow." },
+      { title: "Clear, direct communication", description: "Straight answers and regular updates over WhatsApp, email or calls — no jargon, no surprises." },
+      { title: "Code that lasts", description: "Documented, tested code that any developer can extend long after launch." },
     ],
   },
 
   skills: {
     eyebrow: 'Toolbox',
     title: { pre: 'The stack behind ', accent: 'your product', post: '' },
-    lead: 'Proven tools I use every day to ship reliable products. Highlighted items are my daily drivers.',
+    lead: "Proven tools used every day to ship reliable products. Highlighted items are the daily drivers.",
     groups: [
       { title: 'Backend', skills: ['Laravel', 'PHP 8+', 'MySQL', 'MongoDB', 'RESTful APIs', 'Composer'], core: ['Laravel', 'PHP 8+', 'MySQL', 'RESTful APIs'] },
       { title: 'Frontend', skills: ['Vue.js', 'React', 'Next.js', 'WordPress', 'JavaScript ES6+', 'HTML5 / CSS3', 'Sass', 'Bootstrap', 'Blade'], core: ['Vue.js', 'React', 'Next.js', 'WordPress'] },
       { title: 'APIs & Testing', skills: ['Postman', 'JSON / XML', 'API Resources', 'JWT / Sanctum', 'PHPUnit', 'Laravel Dusk'], core: [] },
       { title: 'Deployment & Tools', skills: ['Git / GitHub / GitLab', 'cPanel / WHM', 'AWS / VPS', 'SSL & domains', 'AWS S3 / Backblaze B2'], core: [] },
       { title: 'Search Engine Optimization', skills: ['Technical SEO', 'On-page optimization', 'SEO-friendly development'], core: ['Technical SEO'] },
-      { title: 'Working style', skills: ['Problem solving & debugging', 'Agile leadership', 'Stakeholder communication', 'Rapid onboarding'], core: [] },
+      { title: 'Working style', skills: ['Problem solving & debugging', 'Agile delivery', 'Clear communication', 'Rapid onboarding'], core: [] },
     ],
   },
 
   experience: {
     eyebrow: 'Experience',
-    title: { pre: 'Trusted by teams ', accent: 'across industries', post: '' },
-    lead: 'Six roles across agencies, product teams and freelance — always focused on shipping software that holds up in production.',
+    title: { pre: 'Trusted by businesses ', accent: 'across industries', post: '' },
+    lead: 'Six roles across agencies, product companies and freelance work — always focused on shipping software that holds up in production.',
     showMore: 'Show earlier experience ({n} more)',
     showLess: 'Show less',
     jobs: [
       {
-        title: 'Software Engineering Team Lead / Senior Full Stack Developer', company: 'Cord Digital', period: 'Jan 2022 – Present', type: 'Full-time',
-        description: 'Head of the Software Engineering Department, driving technical architecture decisions, overseeing code reviews and mentoring the team across all active projects.',
+        title: 'Senior Full Stack Developer', company: 'Cord Digital', period: 'Jan 2022 – Present', type: 'Full-time',
+        description: "Owning the technical architecture and delivery of the company's client projects — from requirements analysis to deployment.",
         achievements: [
           'Developed and maintained 20+ web applications using Laravel, PHP, MySQL, Vue.js and Bootstrap',
           'Engineered custom ERP systems, dashboards, RBAC, inventory, sales and financial reporting workflows',
@@ -215,18 +215,18 @@ const en = {
     title: { pre: 'Questions clients ', accent: 'ask first', post: '' },
     items: [
       { q: 'What kind of projects do you take on?', a: 'Custom ERP and business systems, SaaS platforms, backend APIs and integrations, SEO-ready websites, and performance rescues for slow or fragile systems.' },
-      { q: 'Can you work on an existing codebase or with my team?', a: 'Yes. I regularly optimize existing Laravel systems (queries, caching, architecture), run code reviews and mentor engineering teams alongside delivering new features.' },
+      { q: 'Can you work on an existing project?', a: "Yes. Existing Laravel systems can be optimized (queries, caching, architecture), and a codebase from another developer can be reviewed, stabilized and extended." },
       { q: 'Which technologies do you use?', a: 'Laravel, PHP 8+, MySQL, Vue.js, React and Next.js, REST APIs, plus deployment on AWS, VPS or cPanel with SSL and domain setup.' },
-      { q: 'Do you also handle SEO and deployment?', a: 'Yes. Technical and on-page SEO, Core Web Vitals tuning, Arabic/English builds and the full launch — hosting, SSL and hand-over — are part of how I work.' },
-      { q: 'How do we get started?', a: 'Send a short brief through the form or WhatsApp. We discuss your goals and scope on a call or chat, then I come back with an approach and next steps.' },
-      { q: 'Do you work with clients outside Egypt?', a: 'Yes — I have delivered platforms for clients in Egypt and Kuwait, and collaborate over WhatsApp, email and calls.' },
+      { q: 'Do you also handle SEO and deployment?', a: "Yes. Technical and on-page SEO, Core Web Vitals tuning, Arabic/English builds and the full launch — hosting, SSL and hand-over — are all part of how projects are delivered." },
+      { q: 'How do we get started?', a: "Send a short brief through the form or WhatsApp. After a call or chat about your goals and scope, you receive a proposed approach and clear next steps." },
+      { q: 'Do you work with clients outside Egypt?', a: "Yes — platforms have been delivered for clients in Egypt and Kuwait, with communication over WhatsApp, email and calls." },
     ],
   },
 
   contact: {
     eyebrow: "Let's talk",
     title: { pre: 'Have a project in mind? ', accent: "Let's build it.", post: '' },
-    lead: "Tell me what you're trying to achieve — an ERP, a SaaS product, a faster website or a stronger backend. I'll reply with honest advice and a clear next step.",
+    lead: "Describe what you want to achieve — an ERP, a SaaS product, a faster website or a stronger backend — and get honest advice and a clear next step.",
     whatsapp: 'Chat on WhatsApp',
     channels: { email: 'Email', phone: 'Phone', location: 'Based in' },
     locationValue: 'Sidi-Ghazi, Kafr El-Dawar, Al-Buhayrah, Egypt',
@@ -243,7 +243,7 @@ const en = {
   },
 
   footer: {
-    description: 'Full Stack Laravel & Vue.js engineer building ERP systems, SaaS platforms and SEO-ready websites for businesses that need software they can rely on.',
+    description: "Laravel & Vue.js engineering for ERP systems, SaaS platforms and SEO-ready websites — software that businesses can rely on.",
     explore: 'Explore',
     touch: 'Get in touch',
     rights: 'All rights reserved.',
@@ -255,7 +255,7 @@ const en = {
     title: { pre: 'All ', accent: 'projects', post: '' },
     lead: 'Every system, platform and website listed here is live. Open any of them to see the work in production.',
     groups: [
-      { title: 'Featured projects', note: 'Platforms and systems I architected and shipped.' },
+      { title: 'Featured projects', note: 'Platforms and systems architected and shipped end to end.' },
       { title: 'Additional projects', note: 'Earlier work and special builds.' },
       { title: 'Client websites', note: 'Live websites and platforms built for clients.' },
     ],
@@ -270,10 +270,10 @@ const en = {
 
   seo: {
     personName: 'Mohamed Atya Hawash',
-    jobTitle: 'Full Stack Laravel & Vue.js Developer, Software Engineering Team Lead',
+    jobTitle: 'Full Stack Laravel & Vue.js Developer, Software Engineer',
     serviceName: 'Mohamed Atya Hawash — Web & Software Development',
     websiteName: 'Mohamed Atya Hawash — Portfolio',
-    offers: ['Business platforms and ERP systems', 'SaaS and full-stack products', 'Backend systems and REST APIs', 'SEO-ready websites and WordPress', 'Performance optimization and team leadership'],
+    offers: ['Business platforms and ERP systems', 'SaaS and full-stack products', 'Backend systems and REST APIs', 'SEO-ready websites and WordPress', 'Performance optimization and system rescue'],
     listName: 'Projects by Mohamed Atya Hawash',
     breadcrumbHome: 'Home',
     breadcrumbProjects: 'All projects',
