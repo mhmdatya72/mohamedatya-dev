@@ -34,7 +34,7 @@ const en = {
 
   nav: {
     brandName: 'Mohamed Atya',
-    brandRole: 'Laravel & Vue.js Engineer',
+    brandRole: 'Software Engineering',
     items: { services: 'Services', work: 'Work', process: 'Process', about: 'About', experience: 'Experience', contact: 'Contact' },
   },
 

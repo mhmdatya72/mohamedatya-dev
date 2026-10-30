@@ -43,7 +43,7 @@ export const buildMetadata = (lang, page = 'home') => {
     },
     twitter: { card: 'summary_large_image', title, description, images: [image] },
     verification: { google: 'BR9IDN6rvyYKR6TLWqXGSRe_OfWwROLKPhDG7dFngIA' },
-    icons: { icon: '/favicon.svg' },
+    icons: { icon: [{ url: '/favicon.ico', sizes: '48x48' }, { url: '/favicon.png', type: 'image/png', sizes: '192x192' }], apple: '/apple-touch-icon.png' },
   }
 }
 

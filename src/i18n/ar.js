@@ -34,7 +34,7 @@ const ar = {
 
   nav: {
     brandName: 'محمد عطية',
-    brandRole: 'مهندس Laravel و Vue.js',
+    brandRole: 'Software Engineering',
     items: { services: 'الخدمات', work: 'الأعمال', process: 'آلية العمل', about: 'نبذة', experience: 'الخبرة', contact: 'تواصل' },
   },
 

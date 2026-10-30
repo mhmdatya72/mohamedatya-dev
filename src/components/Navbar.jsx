@@ -61,8 +61,8 @@ const Navbar = () => {
     <motion.nav initial={{ y: -80, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }} className={`nav${scrolled || isOpen ? ' scrolled' : ''}`}>
       <div className="nav-bar">
         <button type="button" onClick={() => go('home')} className="brand" aria-label={t.common.homeAria}>
-          <span className="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 48 48"><path d="M8 35V13l9 13 8-13v22" /><path d="m27 35 8-22 8 22M30 28h10" /></svg>
+          <span className="brand-mark brand-photo" aria-hidden="true">
+            <img src="/avatar.webp" alt="" width="40" height="40" />
           </span>
           <span className="brand-copy">
             <span className="brand-name">{t.nav.brandName}</span>
