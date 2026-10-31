@@ -60,6 +60,35 @@ export const homeJsonLd = (t) => {
   ]
 }
 
+export const projectJsonLd = (t, project) => {
+  const lang = t.lang
+  const url = `${projectsUrl(lang)}/${project.slug}`
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: t.seo.breadcrumbHome, item: homeUrl(lang) },
+        { '@type': 'ListItem', position: 2, name: t.seo.breadcrumbProjects, item: projectsUrl(lang) },
+        { '@type': 'ListItem', position: 3, name: project.title, item: url },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWork',
+      '@id': `${url}#project`,
+      name: project.title,
+      description: project.description,
+      url,
+      inLanguage: lang,
+      image: project.image.startsWith('/') ? `${SITE_URL}${project.image}` : project.image,
+      keywords: project.technologies.join(', '),
+      creator: { '@id': `${SITE_URL}/#person` },
+      ...(project.demo !== '#' ? { sameAs: [project.demo] } : {}),
+    },
+  ]
+}
+
 export const projectsJsonLd = (t, projects) => [
   {
     '@context': 'https://schema.org',

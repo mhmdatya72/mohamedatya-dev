@@ -16,8 +16,9 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
 
-  const onProjectsPage = pathname.replace(/\/$/, '').endsWith('/projects')
-  const langHref = onProjectsPage ? otherPaths.projects : otherPaths.home
+  const projectMatch = pathname.match(/\/projects\/([^/]+)\/?$/)
+  const onProjectsPage = /\/projects(\/|$)/.test(pathname)
+  const langHref = projectMatch ? `${otherPaths.projects}/${projectMatch[1]}` : onProjectsPage ? otherPaths.projects : otherPaths.home
   const otherLang = lang === 'ar' ? 'en' : 'ar'
 
   useEffect(() => {

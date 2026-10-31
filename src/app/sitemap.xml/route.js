@@ -1,4 +1,5 @@
 import { SITE_URL } from '../../data/site'
+import { allProjects, projectPath } from '../../data/projectIndex'
 
 export const dynamic = 'force-static'
 
@@ -9,6 +10,10 @@ const pages = [
   { path: '/projects', changefreq: 'monthly', priority: 0.8 },
   { path: '/en', changefreq: 'monthly', priority: 0.9 },
   { path: '/en/projects', changefreq: 'monthly', priority: 0.7 },
+  ...allProjects.flatMap(({ slug }) => [
+    { path: projectPath('ar', slug), changefreq: 'monthly', priority: 0.6 },
+    { path: projectPath('en', slug), changefreq: 'monthly', priority: 0.5 },
+  ]),
 ]
 
 const entry = ({ path, changefreq, priority }) =>

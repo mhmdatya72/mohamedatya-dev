@@ -5,16 +5,12 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { FaArrowLeft, FaArrowUp, FaCheckCircle, FaArrowRight } from 'react-icons/fa'
 import { goToSection } from '../data/site'
-import { projects, additionalProjects, clientProjects } from '../data/projects'
-import projectsAr from '../i18n/projects-ar'
+import { allProjects, localizeProject, projectPath } from '../data/projectIndex'
 import { useT, Heading } from '../i18n/LangProvider'
 
-const groups = [projects, additionalProjects, clientProjects]
+const groups = [0, 1, 2].map((group) => allProjects.filter((project) => project.group === group))
 
-// Arabic overlay (title / description / features) falls back to the English text when a project has no translation.
-const localize = (project, lang) => (lang === 'ar' ? { ...project, ...(projectsAr[project.title] || {}) } : project)
-
-const ProjectCard = ({ project, index, t }) => {
+const ProjectCard = ({ project, index, t, lang }) => {
   const p = t.projectsPage
   const status = p.status[project.status] || project.status
   const country = p.countries[project.country] || project.country
@@ -39,17 +35,20 @@ const ProjectCard = ({ project, index, t }) => {
         </div>
       )}
       <div className="project-body">
-        <h3>{project.title}</h3>
+        <h3><Link href={projectPath(lang, project.slug)}>{project.title}</Link></h3>
         <p className="project-desc">{project.description}</p>
         <ul className="project-features">
           {project.features.slice(0, 3).map((feature) => <li key={feature}><FaCheckCircle size={12} /><span>{feature}</span></li>)}
         </ul>
         <div className="project-stack" dir="ltr">{project.technologies.map((tech) => <span key={tech} className="chip">{tech}</span>)}</div>
-        {project.demo !== '#' ? (
-          <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link">{p.visit} <FaArrowUp size={12} style={{ transform: 'rotate(45deg)' }} /></a>
-        ) : (
-          <span className="soon">{p.comingSoon}</span>
-        )}
+        <div className="project-links">
+          <Link href={projectPath(lang, project.slug)} className="project-link">{p.details}</Link>
+          {project.demo !== '#' ? (
+            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link">{p.visit} <FaArrowUp size={12} style={{ transform: 'rotate(45deg)' }} /></a>
+          ) : (
+            <span className="soon">{p.comingSoon}</span>
+          )}
+        </div>
       </div>
     </motion.article>
   )
@@ -78,7 +77,7 @@ const AllProjects = () => {
           <section key={p.groups[groupIndex].title}>
             <div className="group-title"><h2>{p.groups[groupIndex].title}</h2><p>{p.groups[groupIndex].note}</p></div>
             <div className="project-list">
-              {items.map((project, index) => <ProjectCard key={project.title} project={localize(project, lang)} index={index} t={t} />)}
+              {items.map((project, index) => <ProjectCard key={project.slug} project={localizeProject(project, lang)} index={index} t={t} lang={lang} />)}
             </div>
           </section>
         ))}

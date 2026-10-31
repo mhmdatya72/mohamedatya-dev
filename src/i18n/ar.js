@@ -262,8 +262,22 @@ const ar = {
     cta: 'لديك شيء مشابه في بالك؟',
     comingSoon: 'قريباً',
     visit: 'زيارة الموقع',
+    details: 'تفاصيل المشروع',
     status: { Live: 'يعمل', 'Under Development': 'قيد التطوير' },
     countries: { Egypt: 'مصر', Kuwait: 'الكويت', 'Saudi Arabia': 'السعودية', USA: 'الولايات المتحدة' },
+  },
+
+  projectPage: {
+    back: 'كل المشاريع',
+    features: 'أبرز ما يشمله المشروع',
+    facts: 'معلومات سريعة',
+    status: 'الحالة',
+    country: 'الدولة',
+    stack: 'التقنيات المستخدمة',
+    similar: 'أريد مشروعاً مشابهاً',
+    similarMsg: 'مرحباً محمد، أريد مشروعاً مشابهاً لـ «{title}».',
+    related: 'مشاريع أخرى قد تهمّك',
+    metaSuffix: 'محمد عطية حواش',
   },
 
   notFound: { text: 'هذه الصفحة غير موجودة. لنعدك إلى الموقع.', button: 'العودة للرئيسية' },

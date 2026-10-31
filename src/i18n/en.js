@@ -262,8 +262,22 @@ const en = {
     cta: 'Have something similar in mind?',
     comingSoon: 'Coming soon',
     visit: 'Visit live site',
+    details: 'Project details',
     status: { Live: 'Live', 'Under Development': 'Under development' },
     countries: { Egypt: 'Egypt', Kuwait: 'Kuwait', 'Saudi Arabia': 'Saudi Arabia', USA: 'USA' },
+  },
+
+  projectPage: {
+    back: 'All projects',
+    features: 'What the project includes',
+    facts: 'Quick facts',
+    status: 'Status',
+    country: 'Country',
+    stack: 'Technologies used',
+    similar: 'I want something similar',
+    similarMsg: 'Hi Mohamed, I would like a project similar to "{title}".',
+    related: 'More projects you may like',
+    metaSuffix: 'Mohamed Atya Hawash',
   },
 
   notFound: { text: "This page doesn't exist. Let's get you back to the portfolio.", button: 'Back home' },

@@ -47,4 +47,47 @@ export const buildMetadata = (lang, page = 'home') => {
   }
 }
 
+// Short description for search results: the project text cut at a word boundary, under ~155 characters.
+const clip = (text, max = 155) => {
+  if (text.length <= max) return text
+  const cut = text.slice(0, max)
+  return `${cut.slice(0, Math.max(cut.lastIndexOf(' '), 60)).replace(/[\s,.;:—-]+$/, '')}…`
+}
+
+export const buildProjectMetadata = (lang, project) => {
+  const t = dicts[lang]
+  const other = lang === 'ar' ? 'en' : 'ar'
+  const url = `${SITE_URL}${projectsPath[lang]}/${project.slug}`
+  const title = `${project.title} | ${t.projectPage.metaSuffix}`
+  const description = clip(project.description)
+  const image = project.image.startsWith('/') ? `${SITE_URL}${project.image}` : OG_IMAGES[lang]
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title,
+    description,
+    applicationName: t.meta.siteName,
+    authors: [{ name: t.meta.siteName }],
+    keywords: [project.title, ...project.technologies, t.meta.siteName],
+    alternates: {
+      canonical: url,
+      languages: { [lang]: url, [other]: `${SITE_URL}${projectsPath[other]}/${project.slug}`, 'x-default': `${SITE_URL}/projects/${project.slug}` },
+    },
+    robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 } },
+    openGraph: {
+      type: 'article',
+      siteName: t.meta.siteName,
+      locale: t.locale,
+      alternateLocale: [lang === 'ar' ? 'en_US' : 'ar_EG'],
+      url,
+      title,
+      description,
+      images: [{ url: image, alt: project.title }],
+    },
+    twitter: { card: 'summary_large_image', title, description, images: [image] },
+    verification: { google: 'BR9IDN6rvyYKR6TLWqXGSRe_OfWwROLKPhDG7dFngIA' },
+    icons: { icon: [{ url: '/favicon.ico', sizes: '48x48' }, { url: '/favicon.png', type: 'image/png', sizes: '192x192' }], apple: '/apple-touch-icon.png' },
+  }
+}
+
 export const siteViewport = { themeColor: '#08080f' }
