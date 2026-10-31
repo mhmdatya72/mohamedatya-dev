@@ -451,3 +451,17 @@ textarea.field-input { min-height: 130px; resize: vertical; }
 @media (min-width: 720px) { [dir="rtl"] .project-featured .project-media { border-right: 0; border-left: 1px solid var(--line); } }
 @media (min-width: 1000px) { [dir="rtl"] .step:not(:last-child)::after { right: auto; left: -1.1rem; } }
 @media (max-width: 560px) { [dir="rtl"] .float-browser { right: -2%; } [dir="rtl"] .float-stat { left: 0; } }
+
+/* Mobile hero: tighter stack, full-width buttons, shorter portrait. */
+@media (max-width: 560px) {
+  .hero { padding-top: 6.2rem; }
+  .hero-grid { gap: 2.2rem; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-stack { display: none; }
+  .hero-actions { display: grid; gap: .65rem; margin-top: 1.7rem; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .hero-links { justify-content: space-between; margin-top: 1.3rem; }
+  .hero-proof { margin-top: 1.8rem; padding-top: 1.4rem; }
+  .hero-visual { padding-bottom: 3.2rem; }
+  .portrait { aspect-ratio: 4 / 4.1; }
+}
