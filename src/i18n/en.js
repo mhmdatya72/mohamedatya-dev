@@ -40,8 +40,8 @@ const en = {
 
   hero: {
     badge: 'Open to hire and new projects',
-    h1a: "Your idea, built into ",
-    h1b: "a system that grows with you.",
+    h1a: "Fast, secure web systems, ",
+    h1b: "from idea to launch.",
     roles: ['Full Stack Developer', 'Laravel & Vue.js Architect', 'SEO-Friendly Web Builds', 'Software Engineer'],
     sub: "An ERP, a SaaS platform or a website that ranks on Google, built with Laravel, Vue.js, React & Next.js. Fast, secure and ready to scale, from the first call to launch, backed by 5+ years and 25+ delivered projects.",
     primary: 'Start your project',
