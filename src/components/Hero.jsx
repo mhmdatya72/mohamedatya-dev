@@ -55,10 +55,10 @@ const Hero = () => {
           </motion.div>
           <motion.div {...fade(0.26)} className="hero-actions">
             <a href="#contact" className="btn btn-primary">{h.primary} <FaArrowRight size={13} className="rtl-flip" /></a>
-            <a href="#work" className="btn">{h.secondary}</a>
+            <a href="/Mohamed_Atya_Hawash.pdf" download="Mohamed_Atya_Hawash_CV.pdf" className="btn"><FaDownload size={13} /> {h.cv}</a>
           </motion.div>
           <motion.div {...fade(0.32)} className="hero-links">
-            <a href="/Mohamed_Atya_Hawash.pdf" download="Mohamed_Atya_Hawash_CV.pdf" className="inline-flex items-center gap-2"><FaDownload size={12} /> {h.cv}</a>
+            <a href="#work" className="inline-flex items-center gap-2">{h.secondary} <FaArrowRight size={11} className="rtl-flip" /></a>
             <span className="hero-socials" dir="ltr">
               {socials.map(({ label, href, icon: Icon }) => (
                 <a key={label} href={href} aria-label={label} target="_blank" rel="noopener noreferrer"><Icon size={15} /></a>

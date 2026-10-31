@@ -39,7 +39,7 @@ const en = {
   },
 
   hero: {
-    badge: 'Available for new projects',
+    badge: 'Open to hire and new projects',
     h1a: "Your idea, built into ",
     h1b: "a system that grows with you.",
     roles: ['Full Stack Developer', 'Laravel & Vue.js Architect', 'SEO-Friendly Web Builds', 'Software Engineer'],
