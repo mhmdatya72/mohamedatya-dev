@@ -40,10 +40,10 @@ const en = {
 
   hero: {
     badge: 'Available for new projects',
-    h1a: "Software your ",
-    h1b: "business can rely on.",
+    h1a: "Your idea, built into ",
+    h1b: "a system that grows with you.",
     roles: ['Full Stack Developer', 'Laravel & Vue.js Architect', 'SEO-Friendly Web Builds', 'Software Engineer'],
-    sub: "ERP systems, SaaS platforms and SEO-ready websites built with Laravel, Vue.js, React & Next.js — fast, secure and made to scale. 5+ years of experience, 25+ delivered projects and systems serving 1,000+ concurrent users.",
+    sub: "An ERP, a SaaS platform or a website that ranks on Google, built with Laravel, Vue.js, React & Next.js. Fast, secure and ready to scale, from the first call to launch, backed by 5+ years and 25+ delivered projects.",
     primary: 'Start your project',
     secondary: 'See live work',
     cv: 'Download CV',
