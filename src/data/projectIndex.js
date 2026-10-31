@@ -27,3 +27,11 @@ export const getRelated = (slug, lang, count = 3) => {
 
 export const projectsBase = (lang) => (lang === 'ar' ? '/projects' : '/en/projects')
 export const projectPath = (lang, slug) => `${projectsBase(lang)}/${slug}`
+
+// Previous / next project in the portfolio order, wrapping around at both ends.
+export const getNeighbors = (slug, lang) => {
+  const index = allProjects.findIndex((p) => p.slug === slug)
+  if (index < 0) return {}
+  const at = (i) => localizeProject(allProjects[(i + allProjects.length) % allProjects.length], lang)
+  return { prev: at(index - 1), next: at(index + 1) }
+}
