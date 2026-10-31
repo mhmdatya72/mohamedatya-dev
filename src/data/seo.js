@@ -19,7 +19,7 @@ export const homeJsonLd = (t) => {
       image: OG_IMAGES[lang],
       email: `mailto:${PERSON.email}`,
       telephone: PERSON.phone,
-      address: { '@type': 'PostalAddress', addressRegion: 'Al-Buhayrah', addressCountry: 'EG' },
+      address: { '@type': 'PostalAddress', addressLocality: 'Smouha, Alexandria', addressCountry: 'EG' },
       alumniOf: { '@type': 'CollegeOrUniversity', name: 'Damanhour University' },
       worksFor: { '@type': 'Organization', name: 'Cord Digital', url: 'https://corddigital.com/' },
       knowsAbout: ['Laravel', 'PHP', 'Vue.js', 'React', 'Next.js', 'WordPress', 'MySQL', 'REST APIs', 'ERP systems', 'SaaS', 'Search engine optimization'],

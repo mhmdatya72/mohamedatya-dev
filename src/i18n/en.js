@@ -230,7 +230,7 @@ const en = {
     lead: "Describe what you want to achieve — an ERP, a SaaS product, a faster website or a stronger backend — and get honest advice and a clear next step.",
     whatsapp: 'Chat on WhatsApp',
     channels: { email: 'Email', phone: 'Phone', location: 'Based in' },
-    locationValue: 'Sidi-Ghazi, Kafr El-Dawar, Al-Buhayrah, Egypt',
+    locationValue: 'Smouha, Alexandria, Egypt',
     formTitle: 'Send a project brief',
     kindLabel: 'What do you need?',
     kinds: ['ERP / business system', 'SaaS / web app', 'Website + SEO', 'API / backend', 'Something else'],

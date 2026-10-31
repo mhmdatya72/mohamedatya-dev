@@ -7,7 +7,7 @@ export const PERSON = {
   email: 'mohamedatya563@gmail.com',
   phone: '+20 109 838 6972',
   phoneHref: 'tel:+201098386972',
-  locationHref: 'https://maps.google.com/?q=Sidi-Ghazi,Kafr+El-Dawar,Al-Buhayrah,Egypt',
+  locationHref: 'https://maps.google.com/?q=Smouha,Alexandria,Egypt',
 }
 
 export const SOCIAL_URLS = {
