@@ -12,7 +12,7 @@ export const PERSON = {
 
 export const SOCIAL_URLS = {
   github: 'https://github.com/mhmdatya72',
-  linkedin: 'https://www.linkedin.com/in/mohamed-atya-hawash-21853b344',
+  linkedin: 'https://www.linkedin.com/in/mohamedatya-dev/',
   facebook: 'https://www.facebook.com/share/1CVzc6uuKV/',
 }
 
