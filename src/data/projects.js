@@ -33,6 +33,22 @@ export const projects = [
     country: 'Egypt',
   },
   {
+    title: 'Mountain Lakes Bagels',
+    description: 'Online ordering website for Mountain Lakes Bagels, a bagel shop in New Jersey. Customers browse the menu by category, add items to the cart and order online, with featured items, offers and search.',
+    image: '/project-mlbagels.webp',
+    technologies: ['Online Ordering', 'Menu Management', 'Cart & Checkout', 'Customer Accounts'],
+    features: [
+      'Full online menu by category: bagels, sandwiches, omelettes, wraps and beverages',
+      'Cart, checkout and customer accounts',
+      'Featured and most-popular items, offers and search',
+      'Built-in FAQ covering delivery, takeaway and service areas'
+    ],
+    github: 'https://github.com/mhmdatya72',
+    demo: 'https://mlbagels.com/home',
+    status: 'Live',
+    country: 'USA',
+  },
+  {
     title: 'One Step Industrial',
     description: 'B2B E-Commerce & Equipment Supply Platform. A scalable B2B industrial marketplace supporting multi-category product hierarchies, dynamic machinery quote requests, and customized back-office dashboards.',
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',

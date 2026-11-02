@@ -11,6 +11,7 @@ import { projectPath } from '../data/projectIndex'
 // Technical data per featured project, in the same order as the dictionary items (texts live in i18n).
 const meta = [
   { slug: 'cordiana-erp-system', image: '/project-cordiana.webp', mobileImage: '/mobile-project-cordiana.webp', stack: ['Laravel', 'Vue.js', 'MySQL', 'RBAC', 'REST APIs'], demo: 'https://cordiana-sys.com/', country: 'Egypt', featured: true },
+  { slug: 'mountain-lakes-bagels', image: '/project-mlbagels.webp', stack: ['Online Ordering', 'Cart & Checkout', 'Offers'], demo: 'https://mlbagels.com/home', country: 'USA', featured: true },
   { slug: 'one-step-industrial', image: '/project-onestep.webp', stack: ['Laravel', 'Vue.js', 'MySQL'], demo: 'https://onestepcorp.com/', country: 'Egypt' },
   { slug: 'taggz-app', image: '/project-taggz.webp', stack: ['Laravel', 'REST APIs', 'Media processing'], demo: 'https://taggz.app/', country: 'Egypt' },
   { slug: 'al-nasser-group-portal', image: '/alnasser-brand.webp', stack: ['Laravel', 'Vue.js', 'RBAC'], demo: 'https://alnasser.themok.company/', country: 'Kuwait' },
